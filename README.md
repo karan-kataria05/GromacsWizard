@@ -5,7 +5,22 @@ protein-ligand molecular dynamics workflow in GROMACS — from system prep
 through production MD and analysis — behind a simple step-by-step wizard.
 No command line, no scripting, no manual GROMACS commands required.
 
-![GROMACS Wizard screenshot](docs/screenshots/wizard-folder-step.png)
+![GROMACS Wizard screenshot](docs/screenshots/run-progress.png)
+
+## Screenshots
+
+<table>
+<tr>
+<td><img src="docs/screenshots/welcome.png" width="280"/></td>
+<td><img src="docs/screenshots/folder-step.png" width="280"/></td>
+<td><img src="docs/screenshots/run-progress.png" width="280"/></td>
+</tr>
+<tr>
+<td align="center"><sub>Welcome</sub></td>
+<td align="center"><sub>Input detection</sub></td>
+<td align="center"><sub>Live run progress</sub></td>
+</tr>
+</table>
 
 ## What this does
 
