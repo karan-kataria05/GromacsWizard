@@ -1,0 +1,18 @@
+# Nuitka / build artifacts
+*.build/
+*.dist/
+*.onefile-build/
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+
+# Pipeline runtime output (never commit test project data)
+pipeline.log
+prep/
+em/
+nvt/
+npt/
+md/
+analysis/

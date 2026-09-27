@@ -1,0 +1,47 @@
+; ================================
+; NVT Equilibration - 100 ps
+; ================================
+define                  = -DPOSRES
+
+integrator              = md
+dt                      = 0.002
+nsteps                  = 50000        ; 100 ps
+nstxout                 = 5000
+nstvout                 = 5000
+nstenergy               = 500
+nstlog                  = 500
+
+continuation            = no
+constraint_algorithm    = lincs
+constraints             = h-bonds
+lincs_iter              = 1
+lincs_order             = 4
+
+cutoff-scheme           = Verlet
+nstlist                 = 20
+ns_type                 = grid
+pbc                     = xyz
+
+coulombtype             = PME
+rcoulomb                = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw-switch              = 1.0
+rvdw                    = 1.2
+DispCorr                = no
+pme_order               = 4
+fourierspacing          = 0.16
+
+; NOTE: tc-grps below assumes the index.ndx groups are literally named
+; 'Protein_LIG' and 'Water_and_ions' -- the pipeline script prints the actual
+; group names after building index.ndx. Verify they match before running grompp.
+tcoupl                  = V-rescale
+tc-grps                 = Protein_LIG  Water_and_ions
+tau_t                   = 0.1          0.1
+ref_t                   = 300          300
+
+pcoupl                  = no
+
+gen_vel                 = yes
+gen_temp                = 300
+gen_seed                = -1
